@@ -2,7 +2,7 @@ pragma solidity ^0.5.6;
 
 import '@openzeppelin/contracts/token/ERC721/ERC721Full.sol';
 
-contract HYO721Card is ERC721Full, ERC721Mintable {
+contract HYO721Card is ERC721Full {
 	struct Card {
 		string name; // Name of the Card
 		uint256 level; // Level of the Card
@@ -11,7 +11,7 @@ contract HYO721Card is ERC721Full, ERC721Mintable {
 	Card[] public cards; // First Item has Index 0
 	address public owner;
 
-	constructor() public HYO721CardFull('HYOCard', 'HCARD'){
+	constructor() public ERC721Full('HYOCard', 'HCARD'){
 		owner = msg.sender; // owner of MyERC721Card contract who can create a new card
 	}
 
