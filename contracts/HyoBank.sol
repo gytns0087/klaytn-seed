@@ -7,6 +7,7 @@ contract HyoBank is Ownable {
 	bool private bankOpen = true;
 
 	modifier bankOpened() {
+		_;
 	}
 
 	function setBankState(bool _bankOpen) external onlyOwner {
@@ -22,5 +23,6 @@ contract HyoBank is Ownable {
 	}
 
 	function getBalance(address _user) external view bankOpened returns (uint256) {
+		return 0;
 	}
 }
